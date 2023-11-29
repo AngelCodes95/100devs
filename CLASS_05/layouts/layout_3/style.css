@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header, footer{
+    border: 1px solid black;
+    height: 100px;
+    width: 100%;
+    clear: both;
+}
+
+
+.small{
+    width: 15%;
+}
+
+.big{
+    width: 55%;
+}
+
+.left, .innerLeft, .innerRight, .right{
+height: 500px;
+border: solid 1px black;
+float: left;
+}

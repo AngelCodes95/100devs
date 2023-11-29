@@ -1,0 +1,306 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html{
+  font-size: 62.5%;
+}
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* this handles the nave portion to offset it to the right half of the screen */
+nav{
+  width: 65%;
+  float: right;
+}
+li, a{
+  width: fit-content;
+  padding: .5vh .5vw;
+  float: left;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+/* first main section includng the h1 */
+.containerBox{
+  height: 55vh;
+  width: 100%;
+  float: left;
+}
+
+.containerBox h1{
+  width: 35%;
+  height: 25vh;
+  font-size: 5em;
+  margin-left: 10vw;
+  float: left;
+}
+
+.buttonHolderMain, .logoHolderMain{
+  margin-left: 10vw;
+  width: 30vw;
+  height: 5vh;
+  float: left;
+  clear: both;
+}
+.logoHolderMain{
+  width: 20vw;
+  float: none;
+  margin-left: 10vw;
+}
+button, form{
+  width: auto;
+  float: left;
+}
+input{
+  width: 20vw;
+}
+.backgroundImg{
+  width: 50%;
+  height: 55vh;
+  float: right;
+  margin-top: -44vh;
+}
+
+/* second main section including the h2 */
+.h2BgImg{
+  width: 45vw;
+  height: 55vh;
+  float: left;
+}
+
+/* about us */
+.secondMain h4{
+  width: 5vw; 
+  height: 3vh;
+  margin-top: 5vh;
+  margin-left: 5vw;
+  float: left;
+  margin-right: 40vw;
+  font-size: 1.25em;
+}
+/* h2 styling */
+.secondMain h2{
+  width: 28vw;
+  height: 12vh;
+  font-size: 4em;
+  margin: 0;
+  margin-left: 5vw;
+  margin-right: 12vw;
+  float: left;
+  padding: 0;
+}
+/* paragraph for the h2 */
+.secondMain p{
+  width: 36vw;
+  height: 9vw;
+  font-size: 2em;
+  margin-left: 5vw;
+  margin-right: 12vw;
+  float: left;
+}
+
+/* discover menu button in the second main section */
+.buttonH2 button{
+  float: left;
+  margin-left: 5vw;
+}
+
+/* specialty cuisine section */
+.specialtyCuisine h5{
+  text-align: center;
+  font-size: 2em;
+  height: 5vh;
+  width: 100%;
+  float: left;
+  margin-top: 10vh;
+  margin-bottom: 0;
+}
+/* "our specialty cuisine" */
+.specialtyCuisine h3{
+  text-align: center;
+  font-size: 6em;
+  height: 12vh;
+  width: 100%;
+  float: left;
+  margin: 0;
+}
+/* anchor list of meals for menu */
+.meals{
+  width: 100%;
+  height: 7vh;
+  float: left;
+  padding-left: 25vw;
+}
+/* baddie code for the design. Rework in future and ad JS to make it orange when hovered or clicked */
+.meals li{
+  border-bottom: 1px solid black;
+  margin-left: 3vw;
+}
+
+/* meal photos */
+.specialtyCuisine{
+  height: 100vh;
+}
+.mealPhotos{
+  float: left;
+  width: 100%;
+  height: 60vh;
+}
+.mealPhotos li{
+  width: 25%;
+  float: left;
+}
+
+.mealPhotos img{
+  padding-left: 2.5vw;
+}
+
+/* hours of operation section */
+.hoursOfOp{
+  height: 50vh;
+}
+.bookTable a{
+  width: 100%;
+  height: 4vh;
+  text-align: center;
+}
+.hoursOfOp h4{
+  width: 100vw;
+  height: 13vh;
+  text-align: center;
+  font-size: 8em;
+  margin: 0 0 3vh 0;
+  float: left;
+}
+/* phone number portion including logo placeholder*/
+.phoneLogo{
+  float: left;
+  width: 100vw;
+  height: 7vh;
+}
+.phoneLogo img{
+  margin-left: 48vw;
+}
+
+.callNow{
+  width: 100vw;
+  height: 3vh;
+  font-size: 2em;
+  text-align: center;
+  float: left;
+}
+.phoneNumber a{
+  float: left;
+  width: 100vw;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* this is where the days and hours of operation are going to be. Two containers, left section and right section. */
+.leftHours, .rightHours{
+  width: 50vw;
+  height: 10vh;
+  float: left;
+}
+
+.leftHours h5, .leftHours div, .rightHours h5, .rightHours div{
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.leftHours div, .rightHours div{
+  font-size: 3em;
+}
+
+/* fruit bowl section */
+.fruitBowl{
+  height: 100vh;
+}
+.fruitBowl img{
+  height: 500px;
+  width: 500px;
+  margin: 15vh 0 15vh 33.333%;
+  padding: 0;
+}
+
+/* testimonials secton */
+.customersSay{
+  height: 50vh;
+  width: 100vw;
+  float:left;
+}
+/* testimonials and customers say portion */
+.customersSay h6, .customersSay h4{
+  width: 100vw;
+  height: 5vh;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+.customersSay h4{
+  font-size: 6em;
+  height: 10vh;
+}
+
+/* John Smiths face image currently placeholder */
+.johnSmithFace{
+  width: 100vw;
+  height: 50px;
+  float: left;
+}
+
+.johnSmithFace img{
+  margin-left: 48vw;
+  padding: 0;
+}
+
+/* John Smiths name and the paragraph below, skipping the 5 stars like a baddie */
+.johnsName {
+  width: 100vw;
+  height: 5vh;
+  font-size: 3em;
+  text-align: center;
+  padding-top: 3vh;
+  float: left;
+}
+
+.customersSay p{
+  width: 60vw;
+  height: 20vh;
+  font-size: 2em;
+  text-align: center;
+  float: left;
+  margin: 3vh 0 0 20vw;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

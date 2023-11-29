@@ -1,0 +1,187 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+*{
+  text-decoration: none;
+  list-style: none;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/* body style here */
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* header layout and styles */
+header {
+  width: 100%;
+  height: 10vh;
+}
+header img{
+  float: left;
+  height: 10vh;
+  width: 10%;
+}
+
+header ul{
+  height: 10vh;
+  width: 33.3333%;
+  float: left;
+  padding: 0;
+  margin: 0 0 0 20%;
+}
+
+header li{
+  width: 25%;
+  height: 10vh;
+  float: left;
+  padding-top: 3vh;
+  list-style: none;
+}
+
+header a, button a{
+  text-decoration: none;
+  list-style: none;
+  color: rgb(46, 70, 88)
+}
+
+header button{
+  width: 8%;
+  height: 5vh;
+  float: right;
+  margin: 2vh 4vw 0 0;
+  background-color: rgb(46, 70, 88);
+}
+
+button a{
+  color: rgb(255, 255, 255);
+}
+
+/* now onto main two sections and subsection below */
+.leftMain, .rightMain{
+  width: 50%;
+  height: 45vh;
+  float: left;
+}
+
+.leftMain span{
+  margin-left: 4vw;
+  margin-top: 2vh;
+}
+
+.leftMain h1{
+  width: 40%;
+  height: 15vh;
+  margin-left: 4vw;
+  text-align: left;
+}
+
+.leftMain input{
+  width: 50%;
+  height: 5vh;
+  float: left;
+  margin-left: 4vw;
+}
+.leftMain button{
+  width: 20%;
+  height: 5vh;
+  float: left;
+  background-color: rgb(46, 70, 88);
+}
+
+.leftMain p{
+  height: 15vh;
+  width: 45%;
+  float: left;
+  margin-left: 4vw;
+}
+
+
+/* right side main components */
+.rightMain{
+  float: right;
+}
+
+.rightMain img{
+  width: 100%;
+  height: 45vh;
+}
+
+/* section below main two sections, the code splits each into 4 25% width sections and resizes to fit. */
+.subsectionMain{
+  height: 30vh;
+  width: 90%;
+  float: left;
+  margin-top: 5vh;
+  margin-left: 4vw;
+}
+
+.subsectionMain section{
+  width: 25%;
+  height: 30vh;
+  float: left;
+}
+
+.subsectionMain p{
+  font-size: medium;
+}
+
+/* bottom section */
+.floorSection {
+  float: left;
+  width: 60%;
+  height: 25vh;
+  margin-left: 4vw;
+  margin-top: 5vh;
+}
+
+.floorSection h3{
+  font-size: 2em;
+  width: 50%;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* media queries to make the mobile layout */
+
+@media screen and (max-width: 390px){
+    header, .subsectionMain, .floorSection{
+      display: none;
+    }
+    
+    .leftMain, .rightMain, .buttonandForm{
+      width: 100%;
+      float: left;
+      clear: both;
+    }
+    .leftMain h1{
+      font-size: 1.5em;
+    }
+    .buttonandForm{
+      margin-top: 4vh;
+    }
+}

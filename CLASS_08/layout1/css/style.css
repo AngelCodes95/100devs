@@ -1,0 +1,100 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+nav, main, aside{
+  float: left;
+  width: 10%;
+}
+main{
+  width: 50%;
+}
+aside{
+  width: 40%;
+}
+
+nav{
+  height: 100vh;
+}
+nav ul li{
+  list-style: none;
+  padding: 2vb;
+  margin-right: 1vb;
+}
+nav ul{
+  margin: auto;
+  padding: 1vw;
+}
+
+aside ul{
+  height: 60vh;
+  float: right;
+}
+aside ul li{
+  list-style: none;
+  margin-right: 1vb;
+  padding: 1vb;
+  height: 16vh;
+  font-size: x-small;
+}
+.rightHalf {
+  float: left;
+}
+.bottomThird {
+  float: left;
+  width: 40vw;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+* {
+  list-style: none;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+nav,main,aside{
+  float: left;
+  width: 10%;  
+}
+
+main{
+  width: 50%
+}
+
+aside{
+  width: 40%;
+}
+
+nav > img + a{
+  padding-left: 2vw;
+  padding-top: 2vw;
+}
+
+main img{
+  border: 1px solid black;
+  margin-top: 15px;
+  width: 80%;
+  height: 60dvh;
+  float: right;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

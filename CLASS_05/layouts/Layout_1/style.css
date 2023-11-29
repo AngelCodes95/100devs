@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header, footer{
+    border: 1px solid black;
+    height: 100px;
+    width: 100%;
+    clear: both;
+}
+
+section.upper{
+    border: solid 1px black;
+    width: 33.3333%;
+    height: 200px;
+    float: left;
+}
+
+section.lower{
+    border: solid 1px black;
+    width: 50%;
+    float: left;
+    height: 300px;
+}

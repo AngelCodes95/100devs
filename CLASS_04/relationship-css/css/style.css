@@ -1,0 +1,26 @@
+h1{
+    color: purple;
+}
+
+h2{
+    color: yellow;
+}
+
+/* world and zebra not unicorn and duck */
+section > h2{
+    color: blue;
+}
+
+/* unicorn and duck to both be red */
+
+article > h2{
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* unicorn to be orange */
+
+section article h2{
+    color: orange;
+}

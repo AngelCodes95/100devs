@@ -1,0 +1,230 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* make text black in nav */
+a{
+  color: black;
+  text-decoration: none;
+}
+/* nav container and ul container styling */
+nav, nav ul{
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: 8vh;
+}
+/* Ayesha logo  */
+.ayeshaLogo{
+  width: 90px;
+  height: 20px;
+  float: left;
+  margin-top: 2vh;
+}
+/* nav links */
+nav li{
+  width: 8vw;
+  height: 4vh;
+  float: left;
+  list-style: none;
+  text-decoration: none;
+  margin: 2.5vh 0 0 1vw;
+  text-align: center;
+}
+
+.bookOnline{  
+  width: 8vw;
+  height: 5vh;
+  margin-left: 9vw;
+  float: left;
+}
+
+/* logo style for nav, cart and search */
+.navLogo{
+  width: 10px;
+  height: 10px;
+  float: left;
+  margin: 1vh 2vw;
+}
+
+
+/* Main primary section layout styles */
+.bigMain{
+  height: 60vh;
+  width: 100vw;
+  float: left;
+}
+/* h1 basic style */
+.bigMain h1{
+  height: 35vh;
+  width: 35vw;
+  margin: 10vh 50vw 0 15vh;
+  float: left;
+  font-size: 6em;
+}
+/* divide uniqueness span basic style */
+.bigMain span{
+  height: 4vh;
+  width: 100vw;
+  padding-left: 8.5vw;
+  float: left;
+  font-size: 1em;
+}
+
+/* our services button basic style */
+.bigMain button{
+  height: 5vh;
+  width: 10vw;
+  margin: 1vw 15vh;
+  float: left;
+}
+
+/* container style for bottom of the main section with each of the services */
+.servicesMain{
+  width: 100vw;
+  height: 30vh;
+  float: left;
+}
+
+/* basic styling for each of the main services */
+.logosMain{
+  height: 30vh;
+  width: 33.25vw;
+  float: left;
+  text-align: center;
+  padding: 1vh 5vw;
+}
+
+/* smolMain container */
+.smolMain{
+  height: 50vh;
+  width: 100%;
+  float: left;
+  margin-top: 10vh;
+}
+/* smolMain, make your own momentum section */
+.leftSmol{
+  height: 50vh;
+  width: 40vw;
+  margin-left: 10vw;
+  float: left;
+  text-align: left;
+}
+/* h2 resize */
+.leftSmol h2{
+  font-size: 3em;
+}
+/* button style in leftSmol */
+.leftSmol button{
+  width: 15vw;
+  background-color: black;
+  height: 5vh;
+}
+.leftSmol a{
+  color: white;
+}
+
+/* right side of smol main, just setting the correct spacing for a bg image */
+.rightSmol{
+  width: 42vw;
+  margin-right: 5vw;
+  height: 50vh;
+  float: left;
+}
+.rightSmol img{
+  padding: 2vh 2vw;
+}
+
+/* beautician photos with names underneath */
+.stylistPhotos{
+  height: fit-content;
+  width: 100%;
+  float: left;
+}
+
+/* photo adjustment */
+.ladies{
+  width: 16%;
+  height: fit-content;
+  float: left;
+}
+
+.altia{
+  margin-left: 26vw;
+}
+
+/* names under photos */
+.ladiesNames{
+  width: 50%;
+  height: 5vh;
+  font-size: 1em;
+  text-align: center;
+  float: left;
+  margin-left: 28vw;
+}
+
+.ladiesNames span{
+  margin-right: 8vw;
+}
+
+/* lookbook container */
+.lookBook{
+  height: 80vh;
+  width: 80vw;
+  margin: 0 10vw;
+  float: left;
+}
+/* our lookbook */
+.lookBook h3{
+  width: 80vw;
+  height: 5vh;
+  font-size: 2em;
+  margin-top: 10vh;
+  float: left;
+  text-align: center;
+}
+
+/* photo columns */
+.photoColumnOne, .photoColumnTwo, .photoColumnThree{
+  width: 30%;
+  height: 75%;
+  float: left;
+  margin-right: 2vw;
+  border: 1px dashed green;
+}
+.photoColumnOne{
+  margin-left: 1.5vw;
+}
+
+/* skipping the image sizing like a baddie. Leaving the dashed border to show how I would lay out the photos. In three columns of two photos each stacked vertically */
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
