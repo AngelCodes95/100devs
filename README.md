@@ -1,2 +1,0 @@
-# codewarsClone
-#100devs
