@@ -16,7 +16,7 @@ const firstTwoByLast = (a,b,c) => {
 firstTwoByLast(10,2,4)
 // Create a function that takes in 1 number. Console log the cube root of the number. Call the function.
 const cubeRoot = (a) => {
-    console.log(Math.cbrt(a))
+    console.log(Math.cbrt(a).toFixed(4))
 }
 // expect 4 for cube root of 64
 cubeRoot(64)
