@@ -3,13 +3,16 @@ document.querySelector('button').addEventListener('click', getPhotoOfDay)
 
 function getPhotoOfDay(){
     const userDate = document.querySelector('input').value 
-    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`
+    const api_key = 'hLA5sRyvo1ZQO4hxqsjbwoiMh4xFSc28RV21ulUz'
+    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${api_key}&date=${userDate}`
 
 
 fetch(apiUrl)
 .then(res => res.json())
 .then(data => {
     console.log(data)
+    document.querySelector('img').src = data.url
+    document.querySelector('h3').innerText = data.explanation
 })
 .catch(err => {
     console.log(`Error ${err}`)
