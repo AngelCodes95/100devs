@@ -11,7 +11,11 @@ fetch(apiUrl)
 .then(res => res.json())
 .then(data => {
     console.log(data)
-    document.querySelector('img').src = data.url
+    if (data.media_type === 'image'){
+        document.querySelector('img').src = data.url
+    }else if (data.media_type === 'video'){
+        document.querySelector('img').src = data.hdurl
+    }
     document.querySelector('h3').innerText = data.explanation
 })
 .catch(err => {

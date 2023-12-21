@@ -13,6 +13,21 @@
 img{
   display: block;
   margin: 0 auto;
+  height: 300px;
+  width: 300px;
+}
+
+h1, h2, h3, img{
+  display: flex;
+  flex: auto;
+  flex-basis: 1;
+  align-items: center;
+  justify-content: center;
+}
+.inputHolder, button, input{
+  display: block;
+  margin: auto;
+  justify-content: center;
 }
 
 
