@@ -1,7 +1,20 @@
 //Create a button that adds 1 to a botScore stored in localStorage 
-//The user will enter a date. Use that date to get the NASA picture of the day from that date! https://api.nasa.gov/
-document.querySelector('button').addEventListener('click', getPhotoOfDay)
+if(!localStorage.getItem('botScore')){
+    localStorage.setItem('botScore', 0)
+}
 
+
+document.querySelector('button').addEventListener('click', addAnothaOne)
+
+
+function addAnothaOne(){
+    let scoreValue = Number(localStorage.getItem('botScore'));
+    scoreValue += 1;
+    localStorage.setItem('botScore', scoreValue);
+}
+
+
+/* commenting this function out until i need pieces of it for api work.
 function getPhotoOfDay(){
     const userDate = document.querySelector('input').value 
     const api_key = 'hLA5sRyvo1ZQO4hxqsjbwoiMh4xFSc28RV21ulUz'
@@ -22,5 +35,5 @@ fetch(apiUrl)
 .catch(err => {
     console.log(`Error ${err}`)
 });
-}
+} */
 
