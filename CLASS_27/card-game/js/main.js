@@ -22,3 +22,5 @@ fetch(apiUrl)
     console.log(`Error ${err}`)
 });
 }
+
+/* playing vs someone. Draw cards, higher card wins. Same card means we go to 'war' and put up 3 cards, flip 4th, winner of 4th flip takes all 8 cards. Win by having all the cards */
