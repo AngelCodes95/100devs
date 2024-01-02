@@ -24,8 +24,8 @@ function drawTwo(){
         document.querySelector('#player1').src = data.cards[0].image
         document.querySelector('#player2').src = data.cards[1].image
         // assign card values to players
-        let player1Val = data.cards[0].value
-        let player2Val = data.cards[1].value
+        let player1Val = convertToNum(data.cards[0].value)
+        let player2Val = convertToNum(data.cards[1].value)
         // comparisons to see who has the higher card
         if (player1Val > player2Val){
             // manipulates h3 to be Player 1 win
@@ -40,4 +40,18 @@ function drawTwo(){
     .catch(err => {
         console.log(`Error ${err}`)
     });
+}
+
+function convertToNum(value){
+    if(value === 'ACE'){
+        return 14
+    }else if (value === 'KING'){
+        return 13
+    }else if (value === 'QUEEN'){
+        return 12
+    }else if (value === 'JACK'){
+        return 11
+    }else{
+        return Number(value)
+    }
 }
