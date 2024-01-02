@@ -1,26 +1,43 @@
-//The user will enter a date. Use that date to get the NASA picture of the day from that date! https://api.nasa.gov/
-document.querySelector('button').addEventListener('click', getPhotoOfDay, {passive: true});
+/* playing vs someone. Draw cards, higher card wins. Same card means we go to 'war' and put up 3 cards, flip 4th, winner of 4th flip takes all 8 cards. Win by having all the cards */ 
+let deckID = '';
 
-function getPhotoOfDay(){
-    const userDate = document.querySelector('input').value 
-    const api_key = 'hLA5sRyvo1ZQO4hxqsjbwoiMh4xFSc28RV21ulUz'
-    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${api_key}&date=${userDate}`
-
-
-fetch(apiUrl)
+fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 .then(res => res.json())
 .then(data => {
     console.log(data)
-    if (data.media_type === 'image'){
-        document.querySelector('img').src = data.hdurl
-    }else if (data.media_type === 'video'){
-        document.querySelector('iframe').src = data.url
-    }
-    document.querySelector('h3').innerText = data.explanation
+    deckID = data.deck_id
 })
 .catch(err => {
     console.log(`Error ${err}`)
 });
-}
+// wait for click of button, draw two cards
+document.querySelector('button').addEventListener('click', drawTwo);
 
-/* playing vs someone. Draw cards, higher card wins. Same card means we go to 'war' and put up 3 cards, flip 4th, winner of 4th flip takes all 8 cards. Win by having all the cards */ 
+//  draw two using global variable deck id
+function drawTwo(){
+    const url = `https://www.deckofcardsapi.com/api/deck/${deckID}/draw/?count=2`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        // grab each of the cards returned from the fetch and place the objects image as the image under h2's
+        document.querySelector('#player1').src = data.cards[0].image
+        document.querySelector('#player2').src = data.cards[1].image
+        // assign card values to players
+        let player1Val = data.cards[0].value
+        let player2Val = data.cards[1].value
+        // comparisons to see who has the higher card
+        if (player1Val > player2Val){
+            // manipulates h3 to be Player 1 win
+            document.querySelector('h3').innerText = 'Player 1 Wins!'
+        }else if (player1Val < player2Val){
+            document.querySelector('h3').innerText = 'Player 2 Wins!'
+        }else{
+            document.querySelector('h3').innerText = 'Tie! Time for War!'
+        }
+
+    })
+    .catch(err => {
+        console.log(`Error ${err}`)
+    });
+}
