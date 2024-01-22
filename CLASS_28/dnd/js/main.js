@@ -8,7 +8,14 @@ function getFetch(){
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
-       
+        console.log(data)
+        // make h2-name the name of the spell
+        document.querySelector('h2').innerText = data.name;
+        data.subclasses.forEach(subclass => {
+            let li = document.createElement('li')
+            li.innerText = subclass.name
+            document.querySelector('ul').append(li)
+        });
       })
       .catch(err => {
           console.log(`error ${err}`)
