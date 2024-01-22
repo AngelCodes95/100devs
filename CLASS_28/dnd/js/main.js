@@ -13,8 +13,8 @@ function getFetch(){
         document.querySelector('h2').innerText = data.name;
         data.subclasses.forEach(subclass => {
             let li = document.createElement('li')
-            li.innerText = subclass.name
-            document.querySelector('ul').append(li)
+            li.textContent = subclass.name
+            document.querySelector('ul').appendChild(li)
         });
       })
       .catch(err => {
