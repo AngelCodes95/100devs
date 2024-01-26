@@ -11,7 +11,8 @@ function getFetch(){
       .then(data => {
         console.log(data)
         console.log(data.title)
-        document.querySelector('h2').innerText = data.title
+        localStorage.setItem('books', data.title)
+        document.querySelector('h2').innerText += localStorage.getItem('books')
       })
       .catch(err => {
           console.log(`error ${err}`)
