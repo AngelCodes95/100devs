@@ -16,3 +16,5 @@ class makeEspresso{
         console.log('2 ice cubes added...')
     }
 }
+
+let gaggia = new makeEspresso('gaggia', 'pro', 'black', 400)
