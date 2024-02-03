@@ -25,3 +25,11 @@ class Seal extends Animal{
         console.log('arf arf')
     }
 } 
+
+
+class MysticSeal extends Seal{
+    constructor(name, size, horn){
+        super(name, size)
+        this.horn = horn
+    }
+}
