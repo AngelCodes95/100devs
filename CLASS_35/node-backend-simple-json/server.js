@@ -8,8 +8,8 @@ const server = http.createServer((req, res) => {
 
   // created a read/write function to reduce redundancy
   const readWrite = (file, contentType) => {
-    fs.readFile('index.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
+    fs.readFile(file, function(err, data) {
+      res.writeHead(200, {'Content-Type': contentType});
       res.write(data);
       res.end();
     });
