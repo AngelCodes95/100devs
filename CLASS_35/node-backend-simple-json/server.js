@@ -31,25 +31,16 @@ const server = http.createServer((req, res) => {
       readWrite('otherotherpage.html','text/html')
       break;
     case '/api':
-      if('student' in params){
-        let personName = 'unknown'
-        let personStatus = 'unknown'
-        let personOccupation = 'unknown'
-        // if name is leon
-        if(params['student']== 'leon'){
-          personName = 'Leon'
-          personStatus = 'Ballin'
-          personOccupation = 'Boss Man'
-  
-        }
+          // coin flip for server
+          let coinFlip = 'type "Flip" for a Random Coin Flip'
+          if(params['student'] == 'flip'){
+            coinFlip = Math.random() <= 0.5 ? 'heads' : 'tails'
+          }
         res.writeHead(200, {'Content-Type': 'application/json'});
           const objToJson = {
-            name: personName,
-            status: personStatus,
-            currentOccupation: personOccupation
+            name: coinFlip
           }
           res.end(JSON.stringify(objToJson));
-      }
       break;
     case '/css/style.css':
       fs.readFile('css/style.css', function(err, data) {
