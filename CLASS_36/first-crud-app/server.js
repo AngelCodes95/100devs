@@ -1,6 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+const mongoClient = require('mongodb').MongoClient
+const connectionString = `mongodb+srv://angelcodes95Starwars:ZippyBoy1!@cluster0.ymjom1m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+
+mongoClient.connect(connectionString)
+    .then(client => {
+        console.log('Connected to database')
+    })
+    .catch(error => console.error(error))
 
 app.use(bodyParser.urlencoded( {extended: true}));
 
