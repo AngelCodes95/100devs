@@ -7,6 +7,7 @@ const connectionString = `mongodb+srv://angelcodes95Starwars:ZippyBoy1!@cluster0
 mongoClient.connect(connectionString)
     .then(client => {
         console.log('Connected to database')
+        const db = client.db('star-wars')
     })
     .catch(error => console.error(error))
 
