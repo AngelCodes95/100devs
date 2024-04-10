@@ -6,15 +6,15 @@ const connectionString = `mongodb+srv://angelcodes95Starwars:ZippyBoy1!@cluster0
 
 mongoClient.connect(connectionString)
     .then(client => {
-        console.log('Connected to database')
         const db = client.db('star-wars')
         const quotesCollection = db.collection('quotes')
+        console.log('Connected to database')
         app.post('/quotes', (req, res) => {
             quotesCollection
               .insertOne(req.body)
               .then(result => {
                 console.log(result)
-                res.redirect('/')
+                
               })
               .catch(error => console.error(error))
           })
@@ -29,11 +29,6 @@ app.listen(3000, function(){
 
 app.get('/', (req, res) =>{
     res.sendFile(__dirname + '/index.html')
-})
-
-app.post('/quotes', (req, res) => {
-    console.log('Hellooooooooooo!')
-    console.log(req.body)
 })
 
 console.log('May Node be with you')
