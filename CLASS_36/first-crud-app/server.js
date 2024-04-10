@@ -6,15 +6,32 @@ const connectionString = `mongodb+srv://angelcodes95Starwars:ZippyBoy1!@cluster0
 
 mongoClient.connect(connectionString)
     .then(client => {
+        // connect to starwars database in cluster0
         const db = client.db('star-wars')
+        // within the starwars database gather the quotes collection
         const quotesCollection = db.collection('quotes')
         console.log('Connected to database')
+        // route to fetch and render quotes
+        app.get('/', (req, res) => {
+            quotesCollection
+                .find()
+                .toArray()
+                .then(results => {
+                    // render quotes using HTML
+                    res.send(results)
+                    // console log for debugging
+                    console.log(results)
+                })
+                .catch(error => console.error(error))
+        })
+
+        // define the route to add new quotes
         app.post('/quotes', (req, res) => {
             quotesCollection
               .insertOne(req.body)
               .then(result => {
                 console.log(result)
-                
+                res.redirect('/')
               })
               .catch(error => console.error(error))
           })
