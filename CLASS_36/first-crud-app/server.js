@@ -8,6 +8,16 @@ mongoClient.connect(connectionString)
     .then(client => {
         console.log('Connected to database')
         const db = client.db('star-wars')
+        const quotesCollection = db.collection('quotes')
+        app.post('/quotes', (req, res) => {
+            quotesCollection
+              .insertOne(req.body)
+              .then(result => {
+                console.log(result)
+                res.redirect('/')
+              })
+              .catch(error => console.error(error))
+          })
     })
     .catch(error => console.error(error))
 
