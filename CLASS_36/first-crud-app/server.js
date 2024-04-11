@@ -42,7 +42,26 @@ mongoClient.connect(connectionString)
         });
         app.put('/quotes', (req, res) => {
             console.log(req.body)
-          })
+            quotesCollection
+                .findOneAndUpdate(
+                    { name: 'Yoda' },
+                    {
+                    $set: {
+                        name: req.body.name,
+                        quote: req.body.quote,
+                    },
+                    },
+                    {
+                    upsert: true,
+                    }
+                )
+                .then(result => {
+                    console.log(result)
+                   })
+                  .catch(error => console.error(error))
+              })
+
+
 
         app.listen(3000, function(){
             console.log('listening on 3000')
