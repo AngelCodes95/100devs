@@ -14,6 +14,8 @@ mongoClient.connect(connectionString)
         
         app.set('view engine', 'ejs')
         app.use(bodyParser.urlencoded( {extended: true}));
+        app.use(express.static('public'));
+        app.use(bodyParser.json());
 
         // define the route to add new quotes
         app.post('/quotes', (req, res) => {
@@ -38,6 +40,9 @@ mongoClient.connect(connectionString)
                 })
                 .catch(error => console.error(error))     
         });
+        app.put('/quotes', (req, res) => {
+            console.log(req.body)
+          })
 
         app.listen(3000, function(){
             console.log('listening on 3000')
