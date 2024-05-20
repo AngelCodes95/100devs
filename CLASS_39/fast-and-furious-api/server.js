@@ -11,8 +11,15 @@ app.get('/', (request, response) =>{
 })
 
 // api route 
-app.get('/api', (req, res) => {
-    res.json(characters)
+app.get('/api/:characterName', (req, res) => {
+    const charactersName = req.params.characterName
+    
+    if(characters[charactersName]){
+        res.json(charactersName)
+        console.log(`successfully responded with '${charactersName}'.`)
+    }else{
+        throw console.error('Error, Not Available');
+    }
 })
 
 // listen for the server on port variable or default

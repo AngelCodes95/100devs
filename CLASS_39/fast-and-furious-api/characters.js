@@ -11,7 +11,7 @@ function Character(name, age, birthplace, mainCar, movies){
 
 // data for some fast and furious characters
 const characters = {
-    'Brian O\'Conner': new Character(
+    'Brian O Conner': new Character(
         'Paul Walker', 
         '40', 
         'Glendale, California', 
