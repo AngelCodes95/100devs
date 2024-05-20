@@ -10,13 +10,13 @@ app.get('/', (request, response) =>{
     response.sendFile(__dirname + '/index.html')
 })
 
-// api route 
+// api route to respond with desired characters real name
 app.get('/api/:characterName', (req, res) => {
-    const charactersName = req.params.characterName
+    const charactersName = req.params.characterName.toLowerCase()
     
     if(characters[charactersName]){
-        res.json(charactersName)
-        console.log(`successfully responded with '${charactersName}'.`)
+        res.json(characters[charactersName])
+        console.log(`successfully responded with "${charactersName}'s" API data.`)
     }else{
         throw console.error('Error, Not Available');
     }
