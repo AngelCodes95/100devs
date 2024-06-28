@@ -27,6 +27,11 @@ if(process.env.NODE_ENV === 'development'){
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
+// Routes
+// Normalize the path to the routes
+const routesPath = require.resolve(path.join(__dirname, 'routes', 'index.js'));
+app.use('/', require(routesPath));
+
 // set up port
 const PORT = process.env.PORT || 5000
 
