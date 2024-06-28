@@ -1,5 +1,12 @@
+const path = require('path');
+
 // bring in mongoose
 const mongoose = require('mongoose')
+/* if line 4 gives error, solution is "const path = require('path');
+
+// Normalize the path to mongoose
+const mongoosePath = require.resolve('mongoose');
+const mongoose = require(mongoosePath);" */ 
 
 // db connect
 const connectToDB = async () => {
