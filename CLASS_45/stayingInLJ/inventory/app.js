@@ -27,6 +27,9 @@ if(process.env.NODE_ENV === 'development'){
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
+// set public folder as statics 
+app.use(express.static(path.join(__dirname, 'public')))
+
 // Routes
 // Normalize the path to the routes
 const routesPath = require.resolve(path.join(__dirname, 'routes', 'index.js'));
