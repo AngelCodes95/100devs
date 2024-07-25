@@ -1,9 +1,11 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const { engine } = require('express-handlebars');
 const passport = require('passport')
 const session = require('express-session')
+const MongoStore = require('connect-mongo')
 
 
 // the following two lines are a bug fix for lines 9 & 10, currently commented out but left in for learning purposes
@@ -36,9 +38,10 @@ app.set('view engine', '.hbs');
 
 // Sessions middleware
 app.use(session({
-    secret : process.env.GOOGLE_CLIENT_SECRET,
+    secret : 'keyboard cat',
     resave : false,
-    saveUninitialized : false
+    saveUninitialized : false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
 }))
 
 // Passport middleware
