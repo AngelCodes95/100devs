@@ -1,7 +1,7 @@
 // protect routes
 module.exports = {
     ensureAuth: function (req, res, next){
-        if (req.isAuthenticated()){
+        if (req.isAuthenticated() && req.user.googleId === process.env.SHELBYS_GOOGLE_ID){
             return next()
         }else{
             res.redirect('/')
@@ -9,7 +9,7 @@ module.exports = {
     },
 
     ensureGuest: function(req, res, next){
-        if(req.isAuthenticated()){
+        if(req.isAuthenticated() && req.user.googleId === process.env.SHELBYS_GOOGLE_ID){
             res.redirect('/dashboard')
         }else{
             return next()
