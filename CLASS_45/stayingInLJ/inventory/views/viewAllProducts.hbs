@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Products</title>
+</head>
+<body>
+    <h1>All Products</h1>
+    <a href="/dashboard">Back to Dashboard</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Amount Paid</th>
+                <th>Listing Price</th>
+                <th>Sold Price</th>
+                <th>Acquisition Miles</th>
+                <th>Additional Notes</th>
+                <th>Receipt</th>
+                <th>Type of Acquisition</th>
+                <th>Acquisition Location</th>
+                <th>Acquisition Entry Cost</th>
+                <th>Status</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.amount_paid}}</td>
+                <td>{{this.listing_price}}</td>
+                <td>{{this.sold_price}}</td>
+                <td>{{this.acquisition_miles}}</td>
+                <td>{{this.additional_notes}}</td>
+                <td>{{this.receipt}}</td>
+                <td>{{this.type_of_acquisition}}</td>
+                <td>{{this.acquisition_location}}</td>
+                <td>{{this.acquisition_entry_cost}}</td>
+                <td>{{this.status}}</td>
+                <td><img src="{{this.image}}" alt="Product Image" width="100"></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -55,3 +55,13 @@ p{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2.2em;
 }
+
+form, input, textarea, select, label, input::placeholder, textarea::placeholder {
+    color: black;
+}
+
+form {
+    height: 90vh;
+    width: auto;
+}
+

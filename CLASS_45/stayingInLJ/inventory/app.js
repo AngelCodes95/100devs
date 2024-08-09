@@ -33,7 +33,10 @@ if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))
 }
 // add handlebars for view engine
-app.engine('.hbs', engine({ extname: '.hbs' }));
+app.engine('.hbs', engine({ 
+    extname: '.hbs',
+    helpers: require('./helpers/handlebars-helpers'),
+ }));
 app.set('view engine', '.hbs');
 
 // Sessions middleware
@@ -52,14 +55,9 @@ app.use(passport.session())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
-// Normalize the path to the routes
-/* const routesPath = require.resolve(path.join(__dirname, 'routes', 'index.js'));
-app.use('/', require(routesPath));
-const authPath = require.resolve(path.join(__dirname, 'routes', 'auth'))
-app.use('/auth', require(authPath));*/
-// Routes
 app.use('/', require(path.join(__dirname, 'routes', 'index')))
 app.use('/auth', require(path.join(__dirname, 'routes', 'auth')))
+
 
 // set up port
 const PORT = process.env.PORT || 5000
