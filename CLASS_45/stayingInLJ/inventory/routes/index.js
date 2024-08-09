@@ -37,6 +37,7 @@ router.get('/add-product', ensureAuth, (req, res) => {
 //@desc route to handle form submission to add product
 //@route POST /add-product
 router.post('/add-product', ensureAuth, async (req, res) => {
+    console.log(req.body)
     try {
         const {
             name,
@@ -62,7 +63,7 @@ router.post('/add-product', ensureAuth, async (req, res) => {
             sold_price,
             acquisition_miles,
             additional_notes,
-            receipt,
+            receipt: receipt === 'on',
             type_of_acquisition,
             acquisition_location,
             acquisition_entry_cost,

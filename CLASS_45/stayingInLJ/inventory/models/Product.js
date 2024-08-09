@@ -34,7 +34,7 @@ const ProductSchema = new mongoose.Schema({
     additional_notes: {
         type: String,
     },
-    reciept: {
+    receipt: {
         type: Boolean,
     },
     type_of_acquisition: {
