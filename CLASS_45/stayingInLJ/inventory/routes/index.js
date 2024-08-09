@@ -54,6 +54,7 @@ router.post('/add-product', ensureAuth, async (req, res) => {
             status,
             image,
         } = req.body;
+        console.log(req.body)
 
         await Product.create({
             name,
