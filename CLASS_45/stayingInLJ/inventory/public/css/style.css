@@ -1,5 +1,5 @@
 body {
-    background: lightblue;
+    background: rgb(128, 166, 179);
 }
 
 p{
@@ -57,7 +57,7 @@ p{
 }
 
 form, input, textarea, select, label, input::placeholder, textarea::placeholder {
-    color: black;
+    color: white;
 }
 
 form {
@@ -69,4 +69,40 @@ select {
     display: block;
     background-color: #42A5F5;
     color: white;
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+    display: block;
+}
+
+#name, #description, 
+#amount_paid,
+#listing_price,
+#sold_price,
+#acquisition_miles,
+#additional_notes,
+#acquisition_location,
+#acquisition_entry_cost,
+#image {
+    background-color: #42A5F5;
+    color: white;
+}
+
+
+#addProductH1 {
+    font-family: 'Arial', sans-serif;
+    color:  white;
+    text-shadow: 2px 2px 4px gray;
+    background: linear-gradient(to right, #42A5F5, #007bff);
+    font-size: 3em;
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    border-bottom: 3px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #42A5f5;
 }

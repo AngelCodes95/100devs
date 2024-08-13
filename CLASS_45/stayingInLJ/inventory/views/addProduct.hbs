@@ -6,7 +6,7 @@
     <title>Add Product</title>
 </head>
 <body>
-    <h1>Add a New Product</h1>
+    <h1 id="addProductH1">Add a New Product</h1>
     <form action="/add-product" method="POST">
         <label for="name">Product Name:</label>
         <input type="text" id="name" name="name" required minlength="3" placeholder="Enter Product name">
@@ -36,10 +36,12 @@
         <textarea id="additional_notes" name="additional_notes" placeholder="Enter additional notes"></textarea>
         <br><br>
 
-        <label for="receipt">Receipt:</label>
-        <input type="checkbox" id="receipt" name="receipt">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
+        <label for="receipt">Receipt</label>
+        <select id="receipt">
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
+        </select>
+
         <br><br>
 
         <label for="type_of_acquisition">Type of Acquisition:</label>
