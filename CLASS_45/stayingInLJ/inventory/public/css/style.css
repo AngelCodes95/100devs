@@ -75,7 +75,7 @@ select {
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 10px;
-    display: block;
+    display: flex;
 }
 
 #name, #description, 
@@ -105,4 +105,10 @@ input[type="checkbox"] {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: #42A5f5;
+}
+
+
+form {
+    max-height: 70vh;
+    overflow-y: auto;
 }
